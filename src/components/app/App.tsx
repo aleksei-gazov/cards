@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './style.css';
 import {Routes, Route} from 'react-router-dom'
 import {Navigate} from '../navigate/Navigate';
 import {Profile} from '../profile/Profile';
