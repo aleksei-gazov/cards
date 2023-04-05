@@ -8,12 +8,18 @@ export const authSlice = createSlice({
     initialState:  {
         isLoggedIn: false,
         isInitialized: false,
+        isRegistered: false
     },
     reducers: {
-
+        isRegisteredAC: (state, action:PayloadAction<{isRegistered:boolean}>) => {
+            state.isRegistered = action.payload.isRegistered //делаем мутабельное изменение!!!
+        },
     }
 
 })
 
 export const authReducer = authSlice.reducer
-// export const {setIsLoggedInAC, setInitialStateAC} = authSlice.actions
+export const {
+    // setIsLoggedInAC,
+    // setInitialStateAC,
+    isRegisteredAC} = authSlice.actions
