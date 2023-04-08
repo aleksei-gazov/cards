@@ -1,19 +1,20 @@
-import * as React from 'react';
-import './style.css';
+import  React from 'react';
 import {Routes, Route} from 'react-router-dom'
-import {Navigate} from '../navigate/Navigate';
-import {Profile} from '../profile/Profile';
-import {Login} from '../login/Login';
-import {Registration} from '../registration/Registration';
-import {PasswordRecovery} from '../passwordRecovery/PasswordRecovery';
-import {NewPassword} from '../enteringNewPassword/EnteringNewPassword';
-import {ErrorComponent} from '../Error/404Error';
+import { Profile } from '../features/profile/Profile';
+import {Login} from '../features/login/Login';
+import { Registration } from '../features/registration/Registration';
+import { PasswordRecovery } from '../features/passwordRecovery/PasswordRecovery';
+import { NewPassword } from '../features/enteringNewPassword/EnteringNewPassword';
+import { ErrorComponent } from '../features/Error/404Error';
+import {Navigate} from '../features/navigate/Navigate';
 
 
 export default function App() {
   return (
-      <div>lllll
+      <div>
         <Navigate/>
+
+
         <Routes>
           <Route path='/profile' element={<Profile/>}/>
           <Route path='/login' element={<Login/>}/>
