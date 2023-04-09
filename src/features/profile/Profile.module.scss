@@ -1,0 +1,36 @@
+.containerPR {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 413px;
+  height: 360px;
+  border-radius: 5px;
+  border: grey solid 2px;
+  margin: 80px auto;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .avatar {
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border: grey solid 2px;
+      p {
+
+      }
+    }
+    .info_data {
+      border: grey solid 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {registrationAPI} from "../registration/registration-api";
-import {AppRootState} from "./store";
+import {AppRootState} from "../../app/store";
 
 const registerThunk = createAsyncThunk<{ isRegistered:boolean } , { email: string, password: string }, { rejectValue:string, state:AppRootState }>
 ("auth/register", async (arg, thunkAPI)=>{

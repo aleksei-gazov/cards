@@ -16,8 +16,8 @@ import {Navigate, NavLink} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
-import {useAppDispatch, useAppSelector} from "../store/store";
-import {authThunks} from "../store/auth-slice";
+import {useAppDispatch, useAppSelector} from "../../app/store";
+import {authThunks} from "../login/auth-slice";
 
 
 type FormData = yup.InferType<typeof schema>;
@@ -67,8 +67,8 @@ export const Registration = () => {
                   textAlign={"center"}
                   alignItems={"center"}
             >
-                <Paper sx={{padding: "35px", marginTop: 8}}>
-                    <Typography marginBottom={"30px"} component="h1" sx={{fontSize:"26px", fontWeight:"600"}}>
+                <Paper sx={{padding: "20px", marginTop: 6}}>
+                    <Typography marginBottom={"20px"} component="h1" sx={{fontSize:"26px", fontWeight:"600"}}>
                         Sign up
                     </Typography>
                     <form onSubmit={onSubmit}>
@@ -84,7 +84,7 @@ export const Registration = () => {
                                     {errors.email?.message}
                                 </p>
                             </FormControl>
-                            <FormControl sx={{m: 1, width: '35ch'}} variant="standard">
+                            <FormControl sx={{ width: '35ch'}} variant="standard">
                                 <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                                 <Input
                                     id="standard-adornment-password"
@@ -104,7 +104,7 @@ export const Registration = () => {
                                 />
                                 <p style={{color:"red", fontSize:"12px"}}>{errors.password?.message}</p>
                             </FormControl>
-                            <FormControl sx={{m: 1, width: '35ch'}} variant="standard">
+                            <FormControl sx={{ width: '35ch'}} variant="standard">
                                 <InputLabel htmlFor="standard-adornment--confirm-password">Confirm password</InputLabel>
                                 <Input
                                     id="standard-adornment--confirm-password"
@@ -126,7 +126,7 @@ export const Registration = () => {
                             <SuperButton type={"submit"}
                                          style={{
                                              borderRadius: "30px",
-                                             marginTop: "60px",
+                                             marginTop: "40px",
                                              width: "100%",
                                              padding: "17px 0",
                                              fontSize:"16px",
