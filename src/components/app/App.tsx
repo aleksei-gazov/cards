@@ -11,7 +11,7 @@ import {ErrorComponent} from '../Error/404Error';
 
 export default function App() {
   return (
-      <div>
+      <div>lllll
         <Navigate/>
         <Routes>
           <Route path='/profile' element={<Profile/>}/>
