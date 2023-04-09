@@ -4,18 +4,16 @@ import {AppRootState} from "./store";
 
 const registerThunk = createAsyncThunk<{ isRegistered:boolean } , { email: string, password: string }, { rejectValue:string, state:AppRootState }>
 ("auth/register", async (arg, thunkAPI)=>{
-    const {rejectWithValue, getState} = thunkAPI
+    const {rejectWithValue} = thunkAPI
     try{
-        const {isRegistered} =getState().auth
-        const res = await registrationAPI.register(arg.email, arg.password)
+        await registrationAPI.register(arg.email, arg.password)
 
-        return {isRegistered}
+        return {isRegistered:true}
     }
     catch (e:any){
         return rejectWithValue(e)
     }
 })
-
 
 export const authSlice = createSlice({
     name: 'auth',

@@ -21,3 +21,6 @@ export const useAppDispatch = () => useDispatch<ThunkDispatchType>();
 export const useAppSelector: TypedUseSelectorHook<AppRootState> = useSelector;
 
 export default store
+
+//@ts-ignore
+window.store = store
