@@ -3,8 +3,10 @@ import { createSlice,  PayloadAction } from "@reduxjs/toolkit";
 
 
 
-export const authSlice = createSlice({
-    name: 'auth',
+
+
+export const profileSlice = createSlice({
+    name: 'profil',
     initialState:  {
         isLoggedIn: false,
         isInitialized: false,
@@ -15,5 +17,5 @@ export const authSlice = createSlice({
 
 })
 
-export const authReducer = authSlice.reducer
+export const authReducer = profileSlice.reducer
 // export const {setIsLoggedInAC, setInitialStateAC} = authSlice.actions
