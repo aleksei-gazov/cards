@@ -15,7 +15,7 @@ export default function App() {
         <div>
 
             <Header/>
-            {/*<Navigate/>*/}
+            <Navigate/>
             <Routes>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/login" element={<Login/>}/>
