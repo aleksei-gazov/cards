@@ -11,6 +11,7 @@ const store = configureStore({
   middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(thunk), // можно это и не писать т.к. санка идет по дефолту
 })
 
+
 export type AppRootState = ReturnType<typeof store.getState>
 type ThunkDispatchType = typeof store.dispatch //типизация dispatch для Redux toolkit
 
