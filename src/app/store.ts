@@ -2,7 +2,7 @@ import { AnyAction, configureStore, ThunkAction, ThunkDispatch } from '@reduxjs/
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import thunk from 'redux-thunk'
 
-import { authReducer } from './auth-slice'
+import { authReducer } from '../features/login/auth-slice'
 
 const store = configureStore({
   reducer: {

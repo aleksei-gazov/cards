@@ -14,9 +14,10 @@ import { Navigate, NavLink } from 'react-router-dom'
 import * as yup from 'yup'
 
 import { RequiredLoginDataType } from '../../api/loginAPI'
+import { useAppDispatch, useAppSelector } from '../../app/store'
 import SuperButton from '../../comman/components/c2-SuperButton/SuperButton'
-import { loginTC } from '../store/auth-slice'
-import { useAppDispatch, useAppSelector } from '../store/store'
+
+import { loginTC } from './auth-slice'
 
 const schema = yup.object({
   email: yup.string().required('Email is required').email(),

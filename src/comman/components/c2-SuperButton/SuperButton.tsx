@@ -21,6 +21,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = ({
   const finalClassName =
     s.button +
     (disabled ? ` ${s.disabled}` : ' ') +
+    // eslint-disable-next-line no-nested-ternary
     (xType === 'red' ? ` ${s.red}` : xType === 'secondary' ? ' ' + s.secondary : ' ' + s.default)
 
   // const fclass = `${s.button} ${disabled ? s.disabled : ''} ${xType === 'red' ? s.red : ''} ${xType === 'secondary' ? ' ' + s.secondary : ''} ${s.default}`
