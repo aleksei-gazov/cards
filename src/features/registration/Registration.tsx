@@ -19,6 +19,7 @@ import * as yup from 'yup'
 
 import { useAppDispatch, useAppSelector } from '../../app/store'
 import SuperButton from '../../comman/components/c2-SuperButton/SuperButton'
+import { Search } from '../packs-navigation/packs-search/Search'
 
 import { registrationThunks } from './registration-slice'
 

@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
+import { registrationAPI } from '../../api/registration-api'
 import { AppRootState } from '../../app/store'
-
-import { registrationAPI } from './registration-api'
 
 const registerThunk = createAsyncThunk<
   { isRegistered: boolean; isError: null | string },
