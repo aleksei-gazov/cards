@@ -1,36 +1,12 @@
 import axios from 'axios'
 
 export const packsNavigationAPI = {
-  getCardsPack(search?: string, sort?: string) {
+  getCardsPack(page: number, pageCount: number, search: string, sort: string) {
     return axios.get<CardPacksResponse>('http://localhost:7542/2.0/cards/pack', {
       withCredentials: true,
-      params: { packName: search, sortPacks: sort },
+      params: { packName: search, sortPacks: sort, page, pageCount },
     })
   },
-  // search(search: string) {
-  //   return axios.get<CardPacksResponse>('http://localhost:7542/2.0/cards/pack', {
-  //     params: { packName: search },
-  //     withCredentials: true,
-  //   })
-  // },
-  // sort(sort: string) {
-  //   return axios.get<any>('http://localhost:7542/2.0/cards/pack', {
-  //     params: { sortPacks: sort },
-  //     withCredentials: true,
-  //   })
-  // },
-  pagination() {
-    return axios.get<CardPacksResponse>('http://localhost:7542/2.0/cards/pack', {
-      params: { page: 1, pageCount: 4 },
-    })
-  },
-}
-
-export type sortParams = {
-  user_name?: string
-  name?: string
-  created?: string
-  cardsCount?: number
 }
 
 export type CardPackType = {

@@ -3,14 +3,14 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import thunk from 'redux-thunk'
 
 import { authReducer } from '../features/login/auth-slice'
-import { searchReducer } from '../features/packs-navigation/packs-search/packs-navigation-slice'
+import { packNavigationReducers } from '../features/packs-navigation/packs-search/packs-navigation-slice'
 import { registrationReducer } from '../features/registration/registration-slice'
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
     registration: registrationReducer,
-    packNavigation: searchReducer,
+    packNavigation: packNavigationReducers,
   },
   middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(thunk), // можно это и не писать т.к. санка идет по дефолту
 })
