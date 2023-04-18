@@ -2,17 +2,16 @@
   border: grey solid 2px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 60px;
   width: 100%;
   position: sticky;
   top: 0;
   bottom: 0;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   box-shadow: 0px 2px 10px rgba(109, 109, 109, 0.25), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
   .logo {
-    //background-image: url("../../assets/image/Group 753.svg");
-    border: grey solid 2px;
+  margin: 5px;
     width: 209px;
     height: 48px;
   }
@@ -21,6 +20,7 @@
     width: 100px;
     display: flex;
     flex-direction: row;
+    margin: 5px;
     // justify-content: space-between;
     align-items: center;
     .info_data {
@@ -30,7 +30,8 @@
       flex-direction: column;
       justify-content: center;
       margin: 0;
-      h5, p {
+      h5,
+      p {
         border: grey solid 2px;
         margin: 0;
       }

@@ -1,6 +1,36 @@
-import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
 
-import { loginAPI, RequiredLoginDataType, ResponseDataType } from '../../api/loginAPI'
+import { authAPI, RequiredLoginDataType, ResponseDataType } from '../../api/authAPI'
+
+import { createAppAsyncThunk } from 'comman/utils/create-app-async-thunk'
+
+// const login = createAppAsyncThunk<{ data: RequiredLoginDataType }, RequiredLoginDataType>(
+//   'auth/login',
+//   async (arg, thunkAPI) => {
+//     const { dispatch, rejectWithValue } = thunkAPI
+//
+//     try {
+//       dispatch(appActions.setAppStatus({ status: 'loading' }))
+//       const res = await authAPI.login(arg)
+//
+//       if (res.data.resultCode === 0) {
+//         dispatch(appActions.setAppStatus({ status: 'succeeded' }))
+//
+//         return { isLoggedIn: true }
+//       } else {
+//         const isShowAppError = !!res.data.fieldsErrors.length
+//
+//         handleServerAppError(res.data, dispatch, isShowAppError)
+//
+//         return rejectWithValue(res.data)
+//       }
+//     } catch (e) {
+//       handleServerNetworkError(e, dispatch)
+//
+//       return rejectWithValue(null)
+//     }
+//   }
+// )
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -28,7 +58,7 @@ export const authActions = authSlice.actions
 
 // thunks
 export const loginTC = (data: RequiredLoginDataType) => (dispatch: Dispatch) => {
-  loginAPI
+  authAPI
     .login(data)
     .then(res => {
       dispatch(authActions.setIsLoggedIn({ isLoggedIn: true }))

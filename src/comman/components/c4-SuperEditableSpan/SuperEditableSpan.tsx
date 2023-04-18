@@ -71,6 +71,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
     // включить editMode при двойном клике // делают студенты
     setEditMode(!editMode)
     onDoubleClick?.(e)
+    console.log('gg')
   }
 
   const spanClassName = s.span + (className ? ' ' + className : '')
@@ -87,12 +88,17 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = ({
         />
       ) : (
         <div className={s.spanBlock}>
-          <img src={editIcon} className={s.pen} alt={'edit'} />
-          <span onDoubleClick={onDoubleClickCallBack} className={spanClassName} {...restSpanProps}>
+          <span className={spanClassName} {...restSpanProps}>
             {/*если нет захардкодженного текста для спана, то значение инпута*/}
 
             {children || restProps.value || defaultText}
           </span>
+          <img
+            onDoubleClick={onDoubleClickCallBack}
+            src={editIcon}
+            className={s.pen}
+            alt={'edit'}
+          />
         </div>
       )}
     </>

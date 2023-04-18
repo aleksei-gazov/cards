@@ -6,9 +6,12 @@ export const instance = axios.create({
   withCredentials: true,
 })
 
-export const loginAPI = {
+export const authAPI = {
   login(data: RequiredLoginDataType) {
     return instance.post<RequiredLoginDataType, ResponseDataType>('auth/login', data)
+  },
+  logout() {
+    return instance.delete<any, any>('auth/login')
   },
 }
 

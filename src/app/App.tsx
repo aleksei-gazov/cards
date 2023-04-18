@@ -2,18 +2,21 @@ import React from 'react'
 
 import { Routes, Route } from 'react-router-dom'
 
-import { NewPassword } from '../features/enteringNewPassword/EnteringNewPassword'
-import { ErrorComponent } from '../features/Error/404Error'
 import Header from '../features/header/Header'
-import { Login } from '../features/login/Login'
-import { Navigate } from '../features/navigate/Navigate'
-import { PasswordRecovery } from '../features/passwordRecovery/PasswordRecovery'
-import { Profile } from '../features/profile/Profile'
-import { Registration } from '../features/registration/Registration'
+
+import s from './App.module.scss'
+
+import { NewPassword } from 'features/enteringNewPassword/EnteringNewPassword'
+import { ErrorComponent } from 'features/Error/404Error'
+import { Login } from 'features/login/Login'
+import { Navigate } from 'features/navigate/Navigate'
+import { PasswordRecovery } from 'features/passwordRecovery/PasswordRecovery'
+import { Profile } from 'features/profile/Profile'
+import { Registration } from 'features/registration/Registration'
 
 export default function App() {
   return (
-    <div>
+    <div className={s.App}>
       <Header />
       <Navigate />
       <Routes>

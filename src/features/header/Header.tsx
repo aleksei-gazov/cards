@@ -1,11 +1,15 @@
 import React from 'react'
 
+import logo from '../../assets/image/imageProfile/Group 753.svg'
+
 import s from './Header.module.scss'
 
 const Header = () => {
   return (
     <div className={s.header}>
-      <div className={s.logo}></div>
+      <div className={s.logo}>
+        <img src={logo} alt="logo" />
+      </div>
       <div className={s.info}>
         <div className={s.info_data}>
           <h5>Name</h5>

@@ -6,8 +6,14 @@ import React, {
   ReactNode,
 } from 'react'
 
+import IconButton from '@mui/material/IconButton'
+import Input from '@mui/material/Input'
+import InputAdornment from '@mui/material/InputAdornment'
+import InputLabel from '@mui/material/InputLabel'
+
 import s from './SuperInputText.module.css'
 
+import SuperButton from 'comman/components/c2-SuperButton/SuperButton'
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
@@ -57,14 +63,31 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = ({
 
   return (
     <div className={s.inputWrapper}>
-      <input
-        id={id}
+      <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+      <Input
+        id="standard-adornment-password"
         type={'text'}
-        onChange={onChangeCallback}
-        onKeyPress={onKeyPressCallback}
-        className={finalInputClassName}
-        {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+        endAdornment={
+          <InputAdornment position="end">
+            <IconButton
+              aria-label="toggle password visibility"
+              // onClick={handleClickShowPassword}
+              // onMouseDown={handleMouseDownPassword}
+            >
+              <SuperButton />
+            </IconButton>
+          </InputAdornment>
+        }
       />
+      {/*<SuperButton />*/}
+      {/*<input*/}
+      {/*  id={id}*/}
+      {/*  type={'text'}*/}
+      {/*  // onChange={onChangeCallback}*/}
+      {/*  // onKeyPress={onKeyPressCallback}*/}
+      {/*  className={finalInputClassName}*/}
+      {/*  {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)*/}
+      {/*/>*/}
       <span id={id ? id + '-span' : undefined} className={finalSpanClassName}>
         {error}
       </span>
